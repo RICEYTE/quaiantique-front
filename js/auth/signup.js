@@ -2,19 +2,27 @@ const inputNom = document.getElementById("nomInput");
 const inputPreNom = document.getElementById("prenomInput");
 const inputEmail = document.getElementById("emailInput");
 const inputPassword = document.getElementById("passwordInput");
+const inputConfirmPassword = document.getElementById("confirmPasswordInput");
+const btnValidation = document.getElementById("btnValidation");
 
 inputNom.addEventListener("keyup", validateForm);
 inputPreNom.addEventListener("keyup", validateForm);
 inputEmail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
-
+inputConfirmPassword.addEventListener("keyup", validateForm);
 
 //Function permettant de valider tout le formulaire
 function validateForm() {
-    validateRequired(inputNom);
-    validateRequired(inputPreNom);
-    validateEmail(inputEmail);
-    validatePassword(inputPassword);
+    const nomOK = validateRequired(inputNom);
+    const prenomOK = validateRequired(inputPreNom);
+    const emailOK = validateEmail(inputEmail);
+    const passwordOK = validatePassword(inputPassword);
+    const confirmOK = validatePasswordConfirmation(inputPassword, inputConfirmPassword);
+    btnValidation.disabled = true;
+    if (nomOK && passwordOK && prenomOK && emailOK && confirmOK) {
+        btnValidation.disabled = false;
+    }
+
 }
 
 function validateRequired(input) {
@@ -65,4 +73,16 @@ function validatePassword(input) {
         input.classList.add("is-invalid");
         return false;
     }
-}   
+}
+
+function validatePasswordConfirmation(inputPwd, inputConfirm) {
+    if (inputPwd.value == inputConfirm.value) {
+        inputConfirm.classList.add("is-valid");
+        inputConfirm.classList.remove("is-invalid");
+
+    } else {
+        inputConfirm.classList.remove("is-valid");
+        inputConfirm.classList.add("is-invalid");
+
+    }
+}

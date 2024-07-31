@@ -22,8 +22,20 @@
         </div>
         <div class="mb-3">
             <label for="PasswordInput" class="form-label">Mot de passe</label>
-            <input type="text" id="passwordInput" class="form-control" placeholder="Entrer votre mot de passe">
+            <input type="password" id="passwordInput" class="form-control" placeholder="Entrer votre mot de passe">
+            <div class="invalid-feedback">
+                Le mot de passe n'est pas assez robuste.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="ConfirmPasswordInput" class="form-label">Confirmation du mot de passe</label>
+            <input type="password" id="confirmPasswordInput" class="form-control"
+                placeholder="Entrer votre mot de passe de nouveau">
+            <div class="invalid-feedback">
+                Le mot de passe est différent.
+            </div>
         </div>
     </form>
-    <button class="btn btn-primary">S'inscrire</button>
+    <button type="submit" class="btn btn-primary" id="btnValidation">S'inscrire</button>
 </div>
