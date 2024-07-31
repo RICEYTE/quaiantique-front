@@ -11976,6 +11976,11 @@ h1, .h1 {
   font-size: 16px;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 footer.footer {
   padding: 15px;
   position: absolute;
@@ -11985,4 +11990,29 @@ footer.footer {
 
 main {
   margin-bottom: 250px;
+}
+
+.hero-scene {
+  position: relative;
+}
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/FondHeroScene.jpg);
+  background-size: cover;
+  filter: brightness(0.3);
+}
+.hero-scene * {
+  position: relative;
+}
+.hero-scene .hero-scene-content {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */
