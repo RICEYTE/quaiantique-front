@@ -11965,4 +11965,24 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+p {
+  font-family: "Hind Madurai", serif;
+  font-size: 10px;
+}
+
+h1, .h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+footer.footer {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+main {
+  margin-bottom: 250px;
 }/*# sourceMappingURL=main.css.map */
