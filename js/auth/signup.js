@@ -14,6 +14,7 @@ function validateForm() {
     validateRequired(inputNom);
     validateRequired(inputPreNom);
     validateEmail(inputEmail);
+    validatePassword(inputPassword);
 }
 
 function validateRequired(input) {
@@ -36,6 +37,25 @@ function validateEmail(input) {
     const email = input.value;
 
     if (email.match(emailRegex)) {
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
+    }
+    else {
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
+    }
+}
+
+
+
+function validatePassword(input) {
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
+    const password = input.value;
+
+    if (password.match(passwordRegex)) {
         input.classList.add("is-valid");
         input.classList.remove("is-invalid");
         return true;
