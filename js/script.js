@@ -1,3 +1,9 @@
+const btnSignout = document.getElementById("signout-btn");
+btnSignout.addEventListener('click', signout);
+
+function signout() {
+    eraseCookie(tokenCookieName);
+}
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
