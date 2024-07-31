@@ -1,5 +1,5 @@
-
-import { allRoutes, websiteName, Route } from "./allRoutes.js";
+import Route from "./route.js";
+import { allRoutes, websiteName } from "./allRoutes.js";
 
 // Création d'une route pour la page 404 (page introuvable)
 const route404 = new Route("404", "Page introuvable", "/pages/404.html");
