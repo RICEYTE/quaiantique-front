@@ -44,6 +44,9 @@ const LoadContentPage = async () => {
 
     // Changement du titre de la page
     document.title = actualRoute.title + " - " + websiteName;
+
+    //afficher les élements en fonction du role
+    showAndHideElementsForRoles();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
@@ -62,3 +65,4 @@ window.onpopstate = LoadContentPage;
 window.route = routeEvent;
 // Chargement du contenu de la page au chargement initial
 LoadContentPage();
+
